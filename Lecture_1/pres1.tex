@@ -15,12 +15,17 @@
 \usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
 
 \usepackage[normalem]{ulem} % strike text
+
+%%% Вставка кода
+
 \usepackage{verbatim}
 
 %%% Работа с русским языком
 \usepackage[T2A]{fontenc}			% кодировка
 \usepackage[utf8]{inputenc}			% кодировка исходного текста
 \usepackage[english]{babel}	% локализация и переносы
+
+
 
 
 %%% Работа с картинками
@@ -639,20 +644,24 @@ A szokatlanul hosszú – 32 ütemes – főtéma harmóniameghatározó vázhan
 
 %------------------------------------------------
 
-\begin{frame}
+\begin{frame}[fragile]
 \frametitle{Теснота стихового ряда}
 
 Важная идея: каждый, даже самый минимальный, элемент художественного текста значим, оказывает влияние на всю структуру.
 
 Сравним две программы
 
-\begin{center}
-\includegraphics[width=0.4\textwidth]{code1.png}
-\end{center}
+\begin{verbatim} 
+line = raw_input()
+new_line = line.split('.')
+print new_line
+\end{verbatim}
 
-\begin{center}
-\includegraphics[width=0.4\textwidth]{code2.png}
-\end{center}
+\begin{verbatim} 
+line = raw_input()
+new_line = line.strip('.')
+print new_line
+\end{verbatim}
 
 Отличия в коде минимальны, но результат принципиально различен.
 
