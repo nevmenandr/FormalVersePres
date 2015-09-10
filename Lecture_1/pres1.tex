@@ -18,7 +18,7 @@
 
 %%% Вставка кода
 
-\usepackage{verbatim}
+\usepackage{listings}
 
 %%% Работа с русским языком
 \usepackage[T2A]{fontenc}			% кодировка
@@ -62,6 +62,24 @@
 \date{8 сентября 2015} % Date, can be changed to a custom date
 
 \begin{document}
+
+\lstset{ %
+language=Python,                 % выбор языка для подсветки (здесь это С)
+basicstyle=\small\sffamily, % размер и начертание шрифта для подсветки кода
+numbers=left,               % где поставить нумерацию строк (слева\справа)
+numberstyle=\tiny,           % размер шрифта для номеров строк
+stepnumber=1,                   % размер шага между двумя номерами строк
+numbersep=1pt,                % как далеко отстоят номера строк от подсвечиваемого кода
+backgroundcolor=\color{white}, % цвет фона подсветки - используем \usepackage{color}
+showspaces=false,            % показывать или нет пробелы специальными отступами
+showstringspaces=false,      % показывать или нет пробелы в строках
+showtabs=false,             % показывать или нет табуляцию в строках
+tabsize=2,                 % размер табуляции по умолчанию равен 2 пробелам
+captionpos=t,              % позиция заголовка вверху [t] или внизу [b] 
+breaklines=true,           % автоматически переносить строки (да\нет)
+breakatwhitespace=false, % переносить строки только если есть пробел
+escapeinside={\%*}{*)}   % если нужно добавить комментарии в коде
+}
 
 \begin{frame}
 \titlepage % Print the title page as the first slide
@@ -610,21 +628,23 @@ A szokatlanul hosszú – 32 ütemes – főtéma harmóniameghatározó vázhan
 \begin{frame}[fragile]
 \frametitle{Теснота стихового ряда}
 
+
+
 Важная идея: каждый, даже самый минимальный, элемент художественного текста значим, оказывает влияние на всю структуру.
 
 Сравним две программы
 
-\begin{verbatim} 
+\begin{lstlisting}[label=example-code,caption=Первая программа]
 line = raw_input()
 new_line = line.split('.')
 print new_line
-\end{verbatim}
+\end{lstlisting}
 
-\begin{verbatim} 
+\begin{lstlisting}[label=example-code2,caption=Вторая программа]
 line = raw_input()
 new_line = line.strip('.')
 print new_line
-\end{verbatim}
+\end{lstlisting}
 
 Отличия в коде минимальны, но результат принципиально различен.
 
