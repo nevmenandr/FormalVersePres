@@ -1,0 +1,458 @@
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND THEMES
+%----------------------------------------------------------------------------------------
+
+\documentclass{beamer}
+
+\usetheme{CambridgeUS}
+\setbeamercolor{title}{bg=red!65!black,fg=white}
+\setbeamercolor{item projected}{bg=darkred}
+\setbeamertemplate{enumerate items}[default]
+\setbeamertemplate{navigation symbols}{}
+\setbeamercovered{transparent}
+\setbeamercolor{block title}{fg=darkred}
+\setbeamercolor{local structure}{fg=darkred}
+
+
+\usepackage{graphicx} % Allows including images
+\usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
+
+\usepackage{verbatim}
+
+%%% Работа с русским языком
+\usepackage[T2A]{fontenc}			% кодировка
+\usepackage[LGR,T1]{fontenc}
+\usepackage[utf8]{inputenc}			% кодировка исходного текста
+\usepackage[english, russian]{babel}	% локализация и переносы
+
+%%% Работа с картинками
+\setlength\fboxsep{3pt} % Отступ рамки \fbox{} от рисунка
+\setlength\fboxrule{1pt} % Толщина линий рамки \fbox{}
+\usepackage{wrapfig} % Обтекание рисунков текстом
+
+%%% Оформление стихов
+\usepackage{verse}
+
+\usepackage{philex}
+
+%%% Зачёркивания
+\usepackage{ulem}
+
+%%% Параллельные тексты
+\usepackage{parallel}
+
+
+\AtBeginSection[]
+{
+  \begin{frame}
+    \frametitle{Содержание}
+    \tableofcontents[currentsection]
+  \end{frame}
+}
+
+%\AtBeginSubsection[]
+%{
+%   \begin{frame}
+%        \frametitle{Содержание}
+%        \tableofcontents[currentsection,currentsubsection]
+%   \end{frame}
+%}
+
+
+
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\title[Занятие 7]{Формальный анализ стиха. Занятие 7} % The short title appears at the bottom of every slide, the full title is only on the title page
+
+\author{Борис Орехов} % Your name
+\institute[НИУ ВШЭ] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
+{
+НИУ Высшая школа экономики \\ % Your institution for the title page
+\medskip
+\textit{nevmenandr@gmail.com} % Your email address
+}
+\date{20 октября 2015} % Date, can be changed to a custom date
+
+\begin{document}
+
+\begin{frame}
+\titlepage % Print the title page as the first slide
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Содержание}  % Table of contents slide, comment this block out to remove it
+\tableofcontents % Throughout your presentation, if you choose to use \section{} and \subsection{} commands, these will automatically be printed on this slide as an overview of your presentation
+\end{frame}
+
+%----------------------------------------------------------------------------------------
+%	PRESENTATION SLIDES
+%----------------------------------------------------------------------------------------
+
+\section[Разрешенные преобразования]{Разрешенные преобразования силлабо-тонической модели}\label{sec:rusyl}
+
+%------------------------------------------------
+\begin{frame}
+\frametitle{Силлабо-тоническая модель}
+
+\begin{itemize}
+\item  $\smile$ --- ямб
+\item  --- $\smile$ хорей
+\end{itemize}
+
+Что может произойти?
+
+\begin{itemize}
+\item  $\smile$ $\smile$ ударение будет пропущено
+\item  --- --- появится лишнее ударение
+\end{itemize}
+
+Это не нарушит модель.
+
+\end{frame}
+
+
+
+%------------------------------------------------
+
+
+\begin{frame}
+
+\begin{center}
+\textbf{Молитва}
+\end{center}
+\textbf{Д4д}
+\begin{verse}
+\underline{\textbf{Я}}, М\textbf{а}терь Б\underline{\textbf{о}}жия, ныне с молитвою\\
+Пр\underline{е}д тво\textbf{и}м \underline{\textbf{о}}бразом, ярким сиянием,\\
+Н\underline{е} о спас\underline{\textbf{е}}нии, н\underline{е} перед б\underline{\textbf{и}}твою,\\
+Н\underline{е} с благод\underline{\textbf{а}}рностью \underline{и}ль пока\underline{\textbf{я}}нием
+
+Н\textit{е} за сво\underline{\textbf{ю}} мол\textbf{ю} д\textbf{\underline{у}}шу пустынную,\\
+З\underline{\textbf{а}} душу странника в свете безродного;\\
+Н\underline{о} я вручить хочу деву невинную\\
+Теплой заступнице мира холодного.
+
+\underline{О}кружи сч\underline{\textbf{а}}стием душу достойную;\\
+Дай ей сопутников, полных внимания,\\
+Молодость светлую, старость покойную,\\
+Сердцу незлобному мир упования.
+\end{verse}
+
+М. Ю. Лермонтов, 1837
+
+\end{frame}
+
+
+\begin{frame}
+
+\begin{center}
+\textbf{Дума про Опанаса}
+\end{center}
+
+\begin{verse}
+Зашумело Гуляй-Поле\\
+От \underline{страшного} пляса, "---\\
+Ходит гоголем по воле\\
+\underline{Скакун} Опанаса.\\
+Опанас глядит картиной\\
+В \underline{папахе} косматой,\\
+Шуба с мёртвого раввина\\
+Под \underline{Гомелем} снята.\\
+Шуба — платье меховое — \\
+\underline{Распахнута} — жарко! \\
+Френч английского покроя \\
+Добыт за Вапняркой. 
+\end{verse}
+
+Э. Багрицкий, 1926
+
+\end{frame}
+
+\section{Метрическая неоднозначность}\label{sec:ambig}
+
+\begin{frame}
+
+
+\begin{verse}
+\lb{first} \\
+\textit{О}, как\underline{\textit{и}}м бы ст\textit{а}л т\underline{ы} вл\textit{а}стел\underline{\textit{и}}ном	
+\end{verse}
+
+
+\begin{verse}
+\lb{second} \\
+Н\textit{е} про\textit{\underline{я}}витс\textit{я} з\underline{а} п\textit{о}вор\textit{\underline{о}}том
+\end{verse}
+
+
+\begin{verse}
+\lb{third} \\
+П\textit{е}ред в\underline{\textit{ы}}езд\textit{о}м \underline{и}з г\textit{о}родк\underline{\textit{а}}.
+\end{verse}
+
+\end{frame}
+
+\begin{frame}
+\begin{verse}
+Император с профилем орлиным,\\
+С черною, курчавой бородой,\\
+О, каким бы стал ты властелином,\\
+Если б не был ты самим собой!
+
+Любопытно-вдумчивая нежность,\\
+Словно тень, на царственных устах,\\
+Но какая дикая мятежность\\
+Затаилась в сдвинутых бровях!
+
+Образы властительные Рима,\\
+Юлий, Цезарь, Август и Помпей, —\\
+Это тень, бледна и еле зрима,\\
+Перед тихой тайною твоей.
+
+\end{verse}
+Н. С. Гумилев, 1908
+\end{frame}
+
+\begin{frame}
+
+\begin{verse}
+Мне другие мерещятся тени,\\
+Мне другая поет нищета.\\
+Переплетчик забыл о шагрени,\\
+И красильщик не красит холста,
+
+И кузнечная музыка счетом\\
+На три четверти в три молотка\\
+Не проявится за поворотом\\
+Перед выездом из городка.
+
+За коклюшки свои кружевница\\
+Под окном не садится с утра,\\
+И лудильщик, цыганская птица,\\
+Не чадит кислотой у костра,
+
+\end{verse}
+
+А. А. Тарковский, 1973
+
+\end{frame}
+%------------------------------------------------
+
+\begin{frame}
+\begin{verse}
+
+Аф2 Когда подымаю,\\
+Х3 Опускаю взор "---\\
+Х3 Я двух чаш встречаю\\
+Х3 Зыбкий разговор.
+
+Аф2	И мукою в мире\\
+Х3 Взнесены мои	\\
+Аф2 Тяжёлые гири,\\
+Х3 Шаткие ладьи.
+	
+Х3 Знают души наши\\
+Аф2 Отчаянья власть:\\
+Аф2 И поднятой чаше	\\
+Х3 Суждено упасть.
+\end{verse}
+
+О. Э. Мандельштам, 1911
+
+\end{frame}
+
+\begin{frame}
+
+\begin{verse}
+Удостоверишься "--- повремени! "---		Я5м = Д4м	Я5м / Я4ж\\
+Что, выброшенной на солому,		Я4ж = Аф3ж\\
+Не надо было ей ни славы, ни		Я5м (= Д4м?)\\
+Сокровищницы Соломона.			Я4ж = Аф3ж\\
+	Нет, руки за голову заломив,			Я5м = Д4м						Д4м / Дк3ж\\
+"---  Глоткою соловьиной! "--- 			Дк3ж (= Я3ж с перебоем?)\\
+Не о сокровищнице "--- Суламифь:	Я5м = Д4м\\
+Горсточке красной глины!				Дк3ж (= Я3ж с перебоем?)
+\end{verse}
+
+М. И. Цветаева, 1922
+
+\end{frame}
+
+\section{Гетерометрический стих}\label{sec:hetero}
+
+\begin{frame}
+\begin{center}
+\textbf{Весеннее успокоение (Из Уланда)}
+\end{center}
+\begin{verse}
+
+Д3м О, не кладите меня\\
+Д2ж В землю сырую —	\\
+Д3м Скройте, заройте меня\\
+Я2ж В траву густую!\\
+Я4м Пускай дыханье ветерка\\
+Х3ж Шевелит травою,\\
+Я4м Свирель поёт издалека,\\
+Я4м Светло и тихо облака\\
+Аф2ж Плывут надо мною!..\\
+
+
+\end{verse}
+
+Ф. И. Тютчев, 1832
+
+\end{frame}
+
+
+\begin{frame}
+
+\begin{verse}
+Слышу ли голос твой\\
+Звонкий и ласковый,\\
+\alert{Как птичка в клетке},\\
+Сердце запрыгает;
+
+Встречу ль глаза твои\\
+\alert{Лазурно-глубокие},\\
+Душа им навстречу\\
+Из груди просится,
+
+И как-то весело,\\
+И хочется плакать,\\
+И так на шею бы\\
+Тебе я кинулся.
+
+\end{verse}
+
+М. Ю. Лермонтов, 1838
+
+\end{frame}
+
+
+%------------------------------------------------
+\section{Регулярный разностопный стих}\label{sec:varstep} % Sections can be created in order to organize your presentation into discrete blocks, all sections and subsections are automatically printed in the table of contents as an overview of the talk
+%------------------------------------------------
+
+\begin{frame}
+
+\begin{verse}
+\lb{firstp}\\
+Я6 Не место объяснять теперь и недосуг,	\\
+Я4 Но государственное дело:	\\
+Я4 Оно, вот видишь, не созрело,	\\
+Я2 Нельзя же вдруг.	\\
+Я6 Что за люди! mon cher! Без дальних я историй	\\
+Я5 Скажу тебе: во-первых, князь Григорий!!\\
+Я6 Чудак единственный! нас со смеху морит!\\
+Я6 Век с англичанами, вся английская складка,\\
+Я5 И так же он сквозь зубы говорит,\\
+Я6 И так же коротко обстрижен для порядка.	
+
+\end{verse}
+\end{frame}
+
+\begin{frame}
+\begin{verse}
+\lb{secp}\\
+Аф4 Ты помнишь ли вечер, как море шумело,\\
+Аф3 В шиповнике пел соловей,\\
+Аф4 Душистые ветки акации белой\\
+Аф3 Качались на шляпе твоей?
+
+Аф4 Меж камней, обросших густым виноградом,\\
+Аф3 Дорога была так узка;\\
+Аф4 В молчанье над морем мы ехали рядом,\\
+Аф3 С рукою сходилась рука.
+
+Аф4 Ты так на седле нагибалась красиво,\\
+Аф3 Ты алый шиповник рвала,\\
+Аф4 Буланой лошадки косматую гриву\\
+Аф3 С любовью ты им убрала;
+\end{verse}
+\end{frame}
+
+\begin{frame}
+
+\begin{verse}
+\lb{thirp}\\
+Я4 Бывают светлые мгновенья:\\
+Я5 Земля так несравненно хороша!\\
+Я4 И неземного восхищенья\\
+Я2 Полна душа.
+
+Я4 Творцу миров благоуханье	\\
+Я5 Несет цветок, и птица песнь дарит:	\\
+Я4 Создателя Его созданье\\
+Я2 Благодарит.
+
+Я4 О, если б воедино слиться\\
+Я5 С цветком и птицею, и всей землей,\\
+Я4 И с ними, как они, молиться\\
+Я2 Одной мольбой;
+
+\end{verse}
+
+\end{frame}
+%
+%%------------------------------------------------
+%
+\begin{frame}
+
+\begin{verse}
+\lb{fourp}\\
+Я4 Мело, мело по всей земле	\\
+Я2 Во все пределы.\\
+Я4 Свеча горела на столе,\\
+Я2 Свеча горела.	
+
+Я4 Как летом роем мошкара\\
+Я2 Летит на пламя,	\\
+Я4 Слетались хлопья со двора\\
+Я2 К оконной раме.
+
+Я4 Метель лепила на стекле\\
+Я2 Кружки и стрелы.	\\
+Я4 Свеча горела на столе,\\
+Я2 Свеча горела.	
+\end{verse}
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+
+\begin{center}
+{\LARGE (4) — ?} \\
+{\LARGE (5) — ?} \\
+{\LARGE (6) — ?} \\
+{\LARGE (7) — ?} 
+\end{center}
+
+\end{frame}
+
+%
+
+\begin{frame}
+\frametitle{Ответы}
+
+
+(4) А. С. Грибоедов (1795—1829) «Горе от ума» (1822—1824)\\
+(5) А. К. Толстой (1817—1875) «Ты помнишь ли вечер, как море шумело...» (1856)\\
+(6) К. Р. <К. К. Романов> (1858—1915) «Бывают светлые мгновенья...» (1902)\\
+(7)  Б. Л. Пастернак (1890—1960) «Зимняя ночь» (1946)
+
+\end{frame}
+
+
+%------------------------------------------------
+
+\begin{frame}
+\Huge{\centerline{продолжение следует}}
+\end{frame}
+
+\end{document}
